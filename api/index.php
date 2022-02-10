@@ -1,7 +1,6 @@
 <?php
 
-include 'autoload.php';
+require __DIR__ . '/bootstrap.php';
 
-Test::hello();
-
-phpinfo();
+use LiveUsers\Test;
+echo Test::hello();
