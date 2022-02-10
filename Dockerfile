@@ -1,5 +1,10 @@
 FROM php:7.4-apache
 
+# Requirements
+
+RUN apt-get update
+RUN apt install -y zip
+
 # Apache configuration
 
 RUN a2enmod rewrite
