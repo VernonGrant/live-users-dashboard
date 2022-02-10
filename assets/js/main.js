@@ -1,3 +1,6 @@
-import { name } from './modules/test.js';
+import { initEntrance } from './modules/entrance.js';
 
-console.log(name);
+document.addEventListener('DOMContentLoaded', (event) => {
+    // Initialize Entrance Module
+    initEntrance();
+})
