@@ -1,7 +1,9 @@
 FROM php:7.4-apache
 
-# Apache configuration
+# Requirements
 
+RUN apt-get update
+RUN apt install -y zip
 RUN a2enmod rewrite
 
 # PHP Unit
@@ -14,3 +16,5 @@ RUN phpunit --version
 # Composer
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+WORKDIR /var/www/html
