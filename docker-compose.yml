@@ -1,0 +1,11 @@
+version: '3.1'
+
+services:
+
+  live_users_dashboard:
+    build: .
+    container_name: live_users_dashboard
+    ports:
+      - 8080:80
+    volumes:
+      - .:/var/www/html/
