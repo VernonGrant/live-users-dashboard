@@ -10,13 +10,27 @@
         <link rel="icon" href="./assets/img/favicon.svg" type="image/svg+xml">
         <link rel="apple-touch-icon" href="./assets/img/apple-touch-icon.png">
 
+        <!-- styles -->
+        <link href="./assets/css/normalize.css" rel="stylesheet"/>
         <link href="./assets/css/styles.min.css" rel="stylesheet"/>
     </head>
     <body>
-        <!-- login -->
-        <section id="app-login">
-            <div>Login</div>
-        </section>
+
+        <!-- entrance overlay -->
+        <div id="app-entrance">
+            <form id="entrance-form" class="rounded shadow">
+                <img alt="logo" src="./assets/img/logo.png"/>
+                <input id="field-username" name="username" type="text"
+                       minlength="3" value="" pattern="[A-Za-z]+"
+                       placeholder="Username"
+                       title="Can only contain alphabetical letters e.g. john"
+                       required/>
+                <input id="field-email" name="email" type="email" value=""
+                       placeholder="Email"
+                       required/>
+                <button class="btn">Enter</button>
+            </form>
+        </div>
 
         <!-- scripts -->
         <script type="module" src="./assets/js/main.js"></script>

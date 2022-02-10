@@ -1,3 +1,66 @@
 html {
+	font-family: Arial, sans-serif;
 	background-color: $color-purple-light;
+}
+
+// -----------------------------------------------------------------------------
+// Utilities
+// -----------------------------------------------------------------------------
+
+.d-block {
+	display: block;
+}
+
+// -----------------------------------------------------------------------------
+// Decorations
+// -----------------------------------------------------------------------------
+
+.shadow {
+	box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.rounded {
+	border-radius: $rounded-radius;
+}
+
+// -----------------------------------------------------------------------------
+// Forms
+// -----------------------------------------------------------------------------
+
+input[type=text],
+input[type=email] {
+	box-sizing: border-box;
+	margin-bottom: $spacer-m;
+	padding: $spacer-s $spacer-m;
+	border: 1px solid $color-purple-light;
+	border-radius: $rounded-radius;
+	color: $color-body;
+}
+
+input[type=text]:focus,
+input[type=email]:focus {
+	outline: none;
+	border-color: $color-purple;
+	background-color: $color-purple-light;
+}
+
+::placeholder {
+	color: $color-purple;
+}
+
+// -----------------------------------------------------------------------------
+// Buttons
+// -----------------------------------------------------------------------------
+
+.btn {
+	padding: $spacer-s $spacer-m;
+	background-color: $color-purple;
+	color: $color-white;
+	outline: none;
+	border: none;
+	border-radius: $rounded-radius;
+}
+
+.btn:hover {
+	background-color: $color-purple-darker;
 }

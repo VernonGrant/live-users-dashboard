@@ -1,2 +1,37 @@
 @import './_variables';
 @import './_general';
+
+// -----------------------------------------------------------------------------
+// Entrance
+// -----------------------------------------------------------------------------
+
+#app-entrance {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-width: 100vw;
+	min-height: 100vh;
+	background-color: $color-purple-light;
+	padding: 0 $spacer-m;
+	box-sizing: border-box;
+
+	#entrance-form {
+		display: block;
+		padding: $spacer-l $spacer-m;
+		background-color: $color-white;
+		width: 100%;
+		max-width: 350px;
+
+		img {
+			display: block;
+			width: 80px;
+			margin: 0 auto $spacer-l auto;
+		}
+	}
+
+	& input,
+	& .btn {
+		display: block;
+		width: 100%;
+	}
+}
