@@ -2,6 +2,17 @@ import { apiURL } from '../settings.js';
 import { applicationState } from '../main.js';
 
 const usersList = document.getElementById('users-list');
+const loadingIndicator  = document.getElementById('loading-indicator');
+
+function disableLoadingIndicator() {
+    loadingIndicator.style.transition = 'none';
+    loadingIndicator.style.width = '0%';
+}
+
+function enableLoadingIndicator() {
+    loadingIndicator.style.transition = 'width 3000ms linear';
+    loadingIndicator.style.width = '100%';
+}
 
 function convertEpocTime(seconds) {
     const date = new Date(0);
@@ -9,13 +20,10 @@ function convertEpocTime(seconds) {
     return date.getHours() + ':' + date.getMinutes();
 }
 
-function updateWelcomeMessage() {
+function updateUsersList() {
+    // Update welcome message.
     const userWelcomeMessage = document.getElementById('user-welcome-message');
     userWelcomeMessage.innerHTML = 'Welcome, ' + applicationState.currentUser.name;
-}
-
-function updateUsersList() {
-    updateWelcomeMessage();
 
     if (Object.keys(applicationState.onlineUsers).length === 0) {
         usersList.innerHTML = '<div class="no-results">No online users</div>';
@@ -38,6 +46,8 @@ function updateUsersList() {
        </div>
        `);
     }
+
+    enableLoadingIndicator();
 
     usersList.innerHTML = usersListEntries.join('');
 }
@@ -67,9 +77,16 @@ async function setOnlineUsers() {
 async function initUsers() {
     await setOnlineUsers();
 
+    // handle refreshing users list.
+    setInterval(async function() {
+        disableLoadingIndicator();
+        await setOnlineUsers();
+        console.log('Refreshed!');
+    }, 3000);
+
     usersList.addEventListener('click', (event) => {
         // TODO: Show additional user details.
-        // console.log(event.srcElement);
+        console.log(event.srcElement);
     });
 }
 
