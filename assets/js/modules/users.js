@@ -1,5 +1,6 @@
 import { apiURL } from '../settings.js';
 import { applicationState } from '../main.js';
+import { initUserModal, showUserModal } from './users-modal.js';
 
 const usersList = document.getElementById('users-list');
 const loadingIndicator  = document.getElementById('loading-indicator');
@@ -32,17 +33,12 @@ function updateUsersList() {
 
     let usersListEntries = [];
     for (const [key, value] of Object.entries(applicationState.onlineUsers)) {
-        let name = value.name;
-        let address = value.ipAddress;
-        let entrance = convertEpocTime(value.entranceTime);
-        let updated = convertEpocTime(value.updatedTime);
-
         usersListEntries.push(`
-        <div class="user-entry">
-            <div><small>Name:</small>${name}</div>
-            <div><small>IP:</small>${address}</div>
-            <div><small>Entrance Time:</small>${entrance}</div>
-            <div><small>Updated Time:</small>${updated}</div>
+        <div class="user-entry" data-identifier="${value.email}">
+            <div><small>Name:</small>${value.name}</div>
+            <div><small>IP:</small>${value.ipAddress}</div>
+            <div><small>Entrance Time:</small>${convertEpocTime(value.entranceTime)}</div>
+            <div><small>Updated Time:</small>${convertEpocTime(value.updatedTime)}</div>
        </div>
        `);
     }
@@ -77,17 +73,19 @@ async function setOnlineUsers() {
 async function initUsers() {
     await setOnlineUsers();
 
-    // handle refreshing users list.
+    // Initialize user modal.
+    initUserModal();
+
+    // User list refresh.
     setInterval(async function() {
         disableLoadingIndicator();
         await setOnlineUsers();
-        console.log('Refreshed!');
     }, 3000);
 
+    // User list item click events.
     usersList.addEventListener('click', (event) => {
-        // TODO: Show additional user details.
-        console.log(event.srcElement);
+        showUserModal(event.srcElement);
     });
 }
 
-export { initUsers };
+export { initUsers, convertEpocTime };

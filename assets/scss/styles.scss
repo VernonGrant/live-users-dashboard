@@ -126,3 +126,64 @@
 		}
 	}
 }
+
+// -----------------------------------------------------------------------------
+// User Modal
+// -----------------------------------------------------------------------------
+
+#app-user-modal {
+	position: fixed;
+	width: 100%;
+	min-height: 100vh;
+	top: 0;
+	left: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(0,0,0,0.5);
+	backdrop-filter: blur(10px);
+	overflow-y: auto;
+
+	// fade out animation.
+	opacity: 1;
+	transition: opacity 1s;
+
+	.btn {
+		top: 0;
+		right: 0;
+		position: absolute;
+		border-radius: 0;
+		padding: $spacer-m;
+	}
+
+	#user-modal-container {
+		background-color: $color-white;
+		box-sizing: border-box;
+		display: block;
+		max-width: 400px;
+		overflow: hidden;
+		position: relative;
+		width: 100%;
+
+		ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			text-align: center;
+		}
+
+		ul li {
+			color: $color-purple;
+			padding: $spacer-s $spacer-xs;
+		}
+
+		ul li.list-label {
+			padding: $spacer-xs;
+			background-color: $color-purple-lighter;
+			color: $color-body;
+			font-weight: 100;
+			display: block;
+			border-bottom: 1px solid $color-purple-light;
+		}
+	}
+}
