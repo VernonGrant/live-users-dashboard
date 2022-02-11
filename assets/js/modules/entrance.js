@@ -47,7 +47,6 @@ async function onSubmit(event) {
 }
 
 function initEntrance () {
-    console.info('Hello from entrance.');
     form.addEventListener('submit', onSubmit);
 }
 
