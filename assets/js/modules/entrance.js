@@ -42,7 +42,7 @@ async function onSubmit(event) {
         fadeOutEntanceInterface();
 
     } else {
-        console.error('Enter route responded with status code of: ', response.status);
+        console.error('Enter route responded with: ', response.status);
     }
 }
 

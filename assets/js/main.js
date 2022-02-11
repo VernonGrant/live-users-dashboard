@@ -1,7 +1,8 @@
 import { initEntrance } from './modules/entrance.js';
 
 const applicationState = {
-    currentUser: {}
+    currentUser: {},
+    onlineUsers: {}
 };
 
 document.addEventListener('DOMContentLoaded', (event) => {

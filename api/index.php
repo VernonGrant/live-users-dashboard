@@ -38,8 +38,21 @@ $router->registerRoute(['/api/exit/', '/api/exit' ], function () {
 });
 
 $router->registerRoute(['/api/users/', '/api/users' ], function () {
-    http_response_code(200);
-    echo 'Get all users';
+    if ($_SERVER['REQUEST_METHOD'] !== 'POST') goto ERROR;
+
+    $userModel = new UsersModel();
+    $userModel->constructFromArray($_POST);
+
+    // We check if the current request is from an exiting user.
+    if ($userModel->exists()) {
+        http_response_code(200);
+        header('Content-Type: application/json; charset=utf-8');
+        echo $userModel->getOnlineUsersJson();
+    } else {
+        ERROR:
+        http_response_code(400);
+        echo 'Bad Request';
+    }
 });
 
 $router->handleRoutes();

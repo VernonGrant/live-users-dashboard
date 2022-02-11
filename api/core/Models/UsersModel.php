@@ -32,7 +32,7 @@ class UsersModel extends Model {
         parent::constructFromArray($data);
 
         // Set object properties from users data record, if exists.
-        $users = $this->getUsersData();
+        $users = self::getUsersData();
         foreach($users as $user) {
             if ($user->email == $this->email) {
                 // TODO: what if the user is already logged in?
@@ -52,7 +52,7 @@ class UsersModel extends Model {
     }
 
     public function update() {
-        $users = $this->getUsersData();
+        $users = self::getUsersData();
 
         // Find users and update information.
         foreach($users as &$user) {
@@ -70,7 +70,32 @@ class UsersModel extends Model {
         file_put_contents(DATA_FILE_PATH, json_encode($users));
     }
 
-    private function getUsersData() {
+    public function exists() {
+        $users = self::getUsersData();
+
+        foreach($users as $user) {
+            if ($user->email == $this->email) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public function getOnlineUsersJson() {
+        $users = self::getUsersData();
+        $usersOnline = [];
+
+        foreach($users as $user) {
+            if ($user->email != $this->email && $user->online) {
+                array_push($usersOnline, $user);
+            }
+        }
+
+        return json_encode($usersOnline);
+    }
+
+    public static function getUsersData() {
         // Create file if it doesn't exist.
         if (!file_exists(DATA_FILE_PATH)) {
             touch(DATA_FILE_PATH);
@@ -80,7 +105,7 @@ class UsersModel extends Model {
         $usersData = file_get_contents(DATA_FILE_PATH);
         $usersData = json_decode($usersData);
 
-        // No previous data
+        // No previous data.
         if ($usersData === NULL) {
             return [];
         }
