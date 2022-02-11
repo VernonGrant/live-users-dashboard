@@ -21,9 +21,9 @@
             <form id="entrance-form" class="rounded shadow"
                   action="javascript:void(0);">
                 <img alt="logo" src="./assets/img/logo.png"/>
-                <input id="field-username" name="username" type="text"
+                <input id="field-name" name="name" type="text"
                        minlength="3" value="" pattern="[A-Za-z]+"
-                       placeholder="Username"
+                       placeholder="Name"
                        title="Can only contain alphabetical letters e.g. john"
                        required/>
                 <input id="field-email" name="email" type="email" value=""
@@ -31,6 +31,19 @@
                        required/>
                 <button class="btn">Enter</button>
             </form>
+        </div>
+
+        <!-- users -->
+        <div id="app-users">
+            <div class="users-list-container rounded shadow">
+                <div class="user-welcome-message">
+                    Welcome, NAME
+                </div>
+
+                <div id="users-list">
+                    Display users list here.
+                </div>
+            </div>
         </div>
 
         <!-- scripts -->

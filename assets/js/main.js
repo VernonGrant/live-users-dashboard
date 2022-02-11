@@ -1,6 +1,12 @@
 import { initEntrance } from './modules/entrance.js';
 
+const applicationState = {
+    currentUser: {}
+};
+
 document.addEventListener('DOMContentLoaded', (event) => {
-    // Initialize Entrance Module
+    // Initialize entrance module.
     initEntrance();
 })
+
+export { applicationState };

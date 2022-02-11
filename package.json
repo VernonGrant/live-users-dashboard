@@ -9,6 +9,7 @@
   "scripts": {
     "serve": "docker-compose up",
     "test:api": "phpunit .",
+    "build:styles:w": "node-sass -w --output-style=compressed ./assets/scss/styles.scss assets/css/styles.min.css",
     "build:styles": "node-sass --output-style=compressed ./assets/scss/styles.scss assets/css/styles.min.css",
     "build:diagrams": "plantuml ./docs/*.plantuml -png"
   },

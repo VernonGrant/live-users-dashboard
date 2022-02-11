@@ -6,6 +6,9 @@
 // -----------------------------------------------------------------------------
 
 #app-entrance {
+	position: absolute;
+	top: 0;
+	left: 0;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -14,6 +17,10 @@
 	background-color: $color-purple-light;
 	padding: 0 $spacer-m;
 	box-sizing: border-box;
+
+	// fade out animation.
+	opacity: 1;
+	transition: opacity 1s;
 
 	#entrance-form {
 		display: block;
@@ -33,5 +40,40 @@
 	& .btn {
 		display: block;
 		width: 100%;
+	}
+}
+
+// -----------------------------------------------------------------------------
+// Users
+// -----------------------------------------------------------------------------
+
+#app-users {
+	align-items: center;
+	background-color: $color-purple-light;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: center;
+	min-height: 100vh;
+	min-width: 100vw;
+	padding: 0 $spacer-m;
+
+	.users-list-container {
+		background-color: $color-white;
+		display: block;
+		max-width: 500px;
+		width: 100%;
+	}
+
+	#users-list {
+		padding: $spacer-l $spacer-m;
+	}
+
+	.user-welcome-message {
+		border-bottom: 5px solid $color-purple;
+		box-sizing: border-box;
+		color: $color-purple;
+		font-weight: bold;
+		padding: $spacer-m;
+		text-align: center;
 	}
 }

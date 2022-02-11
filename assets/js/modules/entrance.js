@@ -1,21 +1,24 @@
 import { apiURL } from '../settings.js';
+import { applicationState } from '../main.js';
+import { initUsers } from './users.js';
 
+const entranceInterface = document.getElementById('app-entrance');
 const form = document.getElementById('entrance-form');
 const submitButton = form.querySelector('.btn');
 
-async function onSubmit(event) {
+function fadeOutEntanceInterface() {
+    entranceInterface.style.opacity = 0;
 
+    setTimeout(() => {
+        entranceInterface.style.display = 'none';
+    }, 1000);
+}
+
+async function onSubmit(event) {
     // Mute submit button.
     submitButton.disabled = true;
     submitButton.innerHTML = 'Loading...';
     submitButton.classList.add('floating');
-
-
-    // TODO: replace with real data.
-    const data = {
-        username: 'Vernon',
-        email: 'vernon@ruppell.io'
-    };
 
     // Send enter request.
     const response = await fetch(apiURL + 'enter', {
@@ -24,15 +27,23 @@ async function onSubmit(event) {
         cache: 'no-cache',
         credentials: 'same-origin',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/x-www-form-urlencoded'
         },
         redirect: 'follow',
         referrerPolicy: 'no-referrer',
-        body: JSON.stringify(data)
+        body: new URLSearchParams(new FormData(form))
     });
 
-    //
-    console.log(response);
+    if (response.ok) {
+        applicationState.currentUser = await response.json();
+
+        // Call users module.
+        await initUsers();
+        fadeOutEntanceInterface();
+
+    } else {
+        console.error('Enter route responded with status code of: ', response.status);
+    }
 }
 
 function initEntrance () {
