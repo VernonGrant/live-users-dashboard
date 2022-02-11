@@ -1,6 +1,6 @@
 # Live Users Dashboard
 
-A test application that shows the current active users. (Live Demo)[http://134.122.106.240/]
+A test application that shows the current active users. [Live Demo](http://134.122.106.240/)
 
 ## Local Development
 
