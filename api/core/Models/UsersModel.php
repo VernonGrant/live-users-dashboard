@@ -96,8 +96,10 @@ class UsersModel extends Model {
     }
 
     public static function getUsersData() {
+
         // Create file if it doesn't exist.
         if (!file_exists(DATA_FILE_PATH)) {
+            mkdir(dirname(DATA_FILE_PATH), 0755, true);
             touch(DATA_FILE_PATH);
         }
 
