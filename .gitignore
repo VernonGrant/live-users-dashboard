@@ -1,5 +1,5 @@
 # Data
-api/data/*
+api/data/data.json
 
 # Node
 node_modules/

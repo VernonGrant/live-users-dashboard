@@ -18,3 +18,9 @@ RUN phpunit --version
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 WORKDIR /var/www/html
+
+# Setup app
+
+COPY . ./
+RUN chown www-data:www-data ./api/data/
+RUN composer dump-autoload
