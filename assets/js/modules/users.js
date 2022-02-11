@@ -1,4 +1,4 @@
-import { apiURL } from '../settings.js';
+import { API_URL } from '../../../config.js';
 import { applicationState } from '../main.js';
 import { initUserModal, showUserModal } from './users-modal.js';
 
@@ -49,7 +49,7 @@ function updateUsersList() {
 }
 
 async function setOnlineUsers() {
-    const response = await fetch(apiURL + 'users', {
+    const response = await fetch(API_URL + 'users', {
         method: 'POST',
         mode: 'cors',
         cache: 'no-cache',

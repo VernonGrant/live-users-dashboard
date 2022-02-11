@@ -1,4 +1,4 @@
-import { apiURL } from '../settings.js';
+import { API_URL } from '../../../config.js';
 import { applicationState } from '../main.js';
 import { initUsers } from './users.js';
 
@@ -21,7 +21,7 @@ async function onSubmit(event) {
     submitButton.classList.add('floating');
 
     // Send enter request.
-    const response = await fetch(apiURL + 'enter', {
+    const response = await fetch(API_URL + 'enter', {
         method: 'POST',
         mode: 'cors',
         cache: 'no-cache',

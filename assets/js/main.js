@@ -1,5 +1,5 @@
 import { initEntrance } from './modules/entrance.js';
-import { apiURL } from './settings.js';
+import { API_URL } from '../../config.js';
 
 const applicationState = {
     currentUser: null,
@@ -16,7 +16,7 @@ window.addEventListener('beforeunload', async (event) => {
         // return;
     // }
 
-    const response = await fetch(apiURL + 'exit', {
+    const response = await fetch(API_URL + 'exit', {
         method: 'POST',
         mode: 'cors',
         cache: 'no-cache',

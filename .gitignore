@@ -7,3 +7,6 @@ node_modules/
 # Composer
 .phpunit.cache/
 vendor/
+
+# App
+config.js
