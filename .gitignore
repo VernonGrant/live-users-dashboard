@@ -1,3 +1,6 @@
+# Data
+api/data/*
+
 # Node
 node_modules/
 
