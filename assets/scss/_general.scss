@@ -3,8 +3,8 @@
 // -----------------------------------------------------------------------------
 
 html {
-	font-family: Arial, sans-serif;
-	background-color: $color-purple-light;
+    font-family: Arial, sans-serif;
+    background-color: $color-purple-light;
 }
 
 // -----------------------------------------------------------------------------
@@ -12,7 +12,7 @@ html {
 // -----------------------------------------------------------------------------
 
 .d-block {
-	display: block;
+    display: block;
 }
 
 // -----------------------------------------------------------------------------
@@ -20,11 +20,11 @@ html {
 // -----------------------------------------------------------------------------
 
 .shadow {
-	box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
 }
 
 .rounded {
-	border-radius: $rounded-radius;
+    border-radius: $rounded-radius;
 }
 
 .floating {
@@ -32,12 +32,12 @@ html {
     animation-duration: 1s;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
- }
+}
 
 @keyframes floating {
-    0% { transform: translate(0,  0px); }
-    50%  { transform: translate(0, 10px); }
-    100%   { transform: translate(0, -0px); }
+    0% { transform: translate(0, 0); }
+    50% { transform: translate(0, 10px); }
+    100% { transform: translate(0, 0); }
 }
 
 // -----------------------------------------------------------------------------
@@ -46,23 +46,23 @@ html {
 
 input[type=text],
 input[type=email] {
-	box-sizing: border-box;
-	margin-bottom: $spacer-m;
-	padding: $spacer-s $spacer-m;
-	border: 1px solid $color-purple-light;
-	border-radius: $rounded-radius;
-	color: $color-body;
+    box-sizing: border-box;
+    margin-bottom: $spacer-m;
+    padding: $spacer-s $spacer-m;
+    border: 1px solid $color-purple-light;
+    border-radius: $rounded-radius;
+    color: $color-body;
 }
 
 input[type=text]:focus,
 input[type=email]:focus {
-	outline: none;
-	border-color: $color-purple;
-	background-color: $color-purple-light;
+    border-color: $color-purple;
+    background-color: $color-purple-light;
+    outline: none;
 }
 
 ::placeholder {
-	color: $color-purple;
+    color: $color-purple;
 }
 
 // -----------------------------------------------------------------------------
@@ -70,14 +70,14 @@ input[type=email]:focus {
 // -----------------------------------------------------------------------------
 
 .btn {
-	padding: $spacer-s $spacer-m;
-	background-color: $color-purple;
-	color: $color-white;
-	outline: none;
-	border: none;
-	border-radius: $rounded-radius;
+    padding: $spacer-s $spacer-m;
+    background-color: $color-purple;
+    color: $color-white;
+    outline: none;
+    border: none;
+    border-radius: $rounded-radius;
 }
 
 .btn:hover {
-	background-color: $color-purple-darker;
+    background-color: $color-purple-darker;
 }

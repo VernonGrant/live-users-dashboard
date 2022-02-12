@@ -6,41 +6,41 @@
 // -----------------------------------------------------------------------------
 
 #app-entrance {
-	align-items: center;
-	background-color: $color-purple-light;
-	box-sizing: border-box;
-	display: flex;
-	justify-content: center;
-	left: 0;
-	min-height: 100vh;
-	min-width: 100vw;
-	padding: $spacer-m;
-	position: absolute;
-	top: 0;
+    align-items: center;
+    background-color: $color-purple-light;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    left: 0;
+    min-height: 100vh;
+    min-width: 100vw;
+    padding: $spacer-m;
+    position: absolute;
+    top: 0;
 
-	// fade out animation.
-	opacity: 1;
-	transition: opacity 1s;
+    // fade out animation.
+    opacity: 1;
+    transition: opacity 1s;
 
-	#entrance-form {
-		background-color: $color-white;
-		display: block;
-		max-width: 350px;
-		padding: $spacer-l $spacer-m;
-		width: 100%;
+    #entrance-form {
+        background-color: $color-white;
+        display: block;
+        max-width: 350px;
+        padding: $spacer-l $spacer-m;
+        width: 100%;
 
-		img {
-			display: block;
-			margin: 0 auto $spacer-l auto;
-			width: 80px;
-		}
-	}
+        img {
+            display: block;
+            margin: 0 auto $spacer-l auto;
+            width: 80px;
+        }
+    }
 
-	& input,
-	& .btn {
-		display: block;
-		width: 100%;
-	}
+    & input,
+    & .btn {
+        display: block;
+        width: 100%;
+    }
 }
 
 // -----------------------------------------------------------------------------
@@ -48,83 +48,84 @@
 // -----------------------------------------------------------------------------
 
 #app-users {
-	align-items: center;
-	background-color: $color-purple-light;
-	box-sizing: border-box;
-	display: flex;
-	justify-content: center;
-	min-height: 100vh;
-	min-width: 100vw;
-	padding: $spacer-m;
+    align-items: center;
+    background-color: $color-purple-light;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    min-width: 100vw;
+    padding: $spacer-m;
 
-	.users-list-container {
-		background-color: $color-white;
-		display: block;
-		max-width: 500px;
-		overflow: hidden;
-		width: 100%;
-	}
+    .users-list-container {
+        background-color: $color-white;
+        display: block;
+        max-width: 500px;
+        overflow: hidden;
+        width: 100%;
+    }
 
-	#users-list {
-		.no-results {
-			padding: $spacer-xl $spacer-m;
-			text-align: center;
-			text-transform: uppercase;
-		}
+    #users-list {
+        .no-results {
+            padding: $spacer-xl $spacer-m;
+            text-align: center;
+            text-transform: uppercase;
+        }
 
-		.user-entry {
-			color: $color-purple;
-			display: grid;
-			font-weight: 400;
-			grid-gap: $spacer-s;
-			grid-template-columns: 1fr 1fr;
-			padding: $spacer-s $spacer-m;
-			text-align: center;
+        .user-entry {
+            color: $color-purple;
+            display: grid;
+            font-weight: 400;
+            grid-gap: $spacer-s;
+            grid-template-columns: 1fr 1fr;
+            padding: $spacer-s $spacer-m;
+            text-align: center;
 
-			div,small {
-				// Allows us to use parent click event.
-				pointer-events: none;
-				user-select: none;
-			}
+            div,
+            small {
+                // Allows us to use parent click event.
+                pointer-events: none;
+                user-select: none;
+            }
 
-			& small {
-				color: $color-body;
-				display: block;
-				font-size: 10px;
-				font-weight: 100;
-				margin-bottom: $spacer-xs;
-				text-transform: uppercase;
-			}
+            & small {
+                color: $color-body;
+                display: block;
+                font-size: 10px;
+                font-weight: 100;
+                margin-bottom: $spacer-xs;
+                text-transform: uppercase;
+            }
 
-			&:nth-child(even) {
-				background-color: $color-purple-lighter;
-			}
+            &:nth-child(even) {
+                background-color: $color-purple-lighter;
+            }
 
-			&:hover {
-				cursor: pointer;
-				background-color: $color-purple-light;
-			}
-		}
-	}
+            &:hover {
+                cursor: pointer;
+                background-color: $color-purple-light;
+            }
+        }
+    }
 
-	#user-welcome-message {
-		background-color: $color-purple;
-		box-sizing: border-box;
-		color: $color-purple-light;
-		font-weight: bold;
-		padding: $spacer-m;
-		text-align: center;
-	}
+    #user-welcome-message {
+        background-color: $color-purple;
+        box-sizing: border-box;
+        color: $color-purple-light;
+        font-weight: bold;
+        padding: $spacer-m;
+        text-align: center;
+    }
 
-	#users-refresh-status {
-		width: 100%;
+    #users-refresh-status {
+        width: 100%;
 
-		#loading-indicator {
-			background-color: $color-purple;
-			height: 5px;
-			width: 0;
-		}
-	}
+        #loading-indicator {
+            background-color: $color-purple;
+            height: 5px;
+            width: 0;
+        }
+    }
 }
 
 // -----------------------------------------------------------------------------
@@ -132,58 +133,58 @@
 // -----------------------------------------------------------------------------
 
 #app-user-modal {
-	position: fixed;
-	width: 100%;
-	min-height: 100vh;
-	top: 0;
-	left: 0;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	background-color: rgba(0,0,0,0.5);
-	backdrop-filter: blur(10px);
-	overflow-y: auto;
+    position: fixed;
+    width: 100%;
+    min-height: 100vh;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    overflow-y: auto;
 
-	// fade out animation.
-	opacity: 1;
-	transition: opacity 1s;
+    // fade out animation.
+    opacity: 1;
+    transition: opacity 1s;
 
-	.btn {
-		top: 0;
-		right: 0;
-		position: absolute;
-		border-radius: 0;
-		padding: $spacer-m;
-	}
+    .btn {
+        top: 0;
+        right: 0;
+        position: absolute;
+        border-radius: 0;
+        padding: $spacer-m;
+    }
 
-	#user-modal-container {
-		background-color: $color-white;
-		box-sizing: border-box;
-		display: block;
-		max-width: 400px;
-		overflow: hidden;
-		position: relative;
-		width: 100%;
+    #user-modal-container {
+        background-color: $color-white;
+        box-sizing: border-box;
+        display: block;
+        max-width: 400px;
+        overflow: hidden;
+        position: relative;
+        width: 100%;
 
-		ul {
-			list-style: none;
-			padding: 0;
-			margin: 0;
-			text-align: center;
-		}
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
 
-		ul li {
-			color: $color-purple;
-			padding: $spacer-s $spacer-xs;
-		}
+        ul li {
+            color: $color-purple;
+            padding: $spacer-s $spacer-xs;
+        }
 
-		ul li.list-label {
-			padding: $spacer-xs;
-			background-color: $color-purple-lighter;
-			color: $color-body;
-			font-weight: bold;
-			display: block;
-			border-bottom: 1px solid $color-purple-light;
-		}
-	}
+        ul li.list-label {
+            padding: $spacer-xs;
+            background-color: $color-purple-lighter;
+            color: $color-body;
+            font-weight: bold;
+            display: block;
+            border-bottom: 1px solid $color-purple-light;
+        }
+    }
 }
