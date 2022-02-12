@@ -2,25 +2,29 @@
 
 namespace LiveUsers;
 
-class Router {
-    private $_registeredRoutes;
+class Router
+{
+    private $registeredRoutes;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->registeredRoutes = [];
     }
 
-    public function registerRoute($paths, $callback) {
+    public function registerRoute($paths, $callback)
+    {
         foreach ($paths as $path) {
             array_push($this->registeredRoutes, [$path, $callback]);
         }
     }
 
-    public function handleRoutes() {
+    public function handleRoutes()
+    {
         $request = $_SERVER['REQUEST_URI'];
 
         // Find router and execute callback.
         foreach ($this->registeredRoutes as $route) {
-            if ( $request == $route[0] ) {
+            if ($request == $route[0]) {
                 $route[1]();
                 return;
             }

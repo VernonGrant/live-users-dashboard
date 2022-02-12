@@ -2,13 +2,14 @@
 
 namespace LiveUsers;
 
-abstract class Model {
-
-    public function constructFromArray($data = []) {
+abstract class Model
+{
+    public function constructFromArray($data = [])
+    {
         // Only set's accessible class properties.
         $properties = get_object_vars($this);
 
-        foreach($properties as $key => $value) {
+        foreach ($properties as $key => $value) {
             if (array_key_exists($key, $data)) {
                 $this->{$key} = $data[$key];
             }
@@ -19,7 +20,8 @@ abstract class Model {
 
     abstract public function update();
 
-    public function toJson() {
+    public function toJson()
+    {
         return json_encode(get_object_vars($this));
     }
 }
