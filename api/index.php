@@ -9,7 +9,7 @@ use LiveUsers\Models\UsersModel;
 
 $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
-// Setup router and register our routes.
+// Setup router and register routes.
 
 $router = new Router();
 

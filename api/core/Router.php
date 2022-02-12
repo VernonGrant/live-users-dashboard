@@ -4,12 +4,7 @@ namespace LiveUsers;
 
 class Router
 {
-    private $registeredRoutes;
-
-    public function __construct()
-    {
-        $this->registeredRoutes = [];
-    }
+    private $registeredRoutes = [];
 
     public function registerRoute($paths, $callback)
     {

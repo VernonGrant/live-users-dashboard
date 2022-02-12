@@ -6,8 +6,7 @@ use LiveUsers\Model;
 
 class UsersModel extends Model
 {
-
-    // NOTE: To save time, I just made them all public.
+    // NOTE: For simplicity and time savings, all properties are public.
     public $email = '';
     public $name = '';
     public $entranceTime;
