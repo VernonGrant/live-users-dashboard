@@ -14,7 +14,7 @@ function fadeOutEntanceInterface() {
     }, 1000);
 }
 
-async function onSubmit(event) {
+async function onSubmit() {
     // Mute submit button.
     submitButton.disabled = true;
     submitButton.innerHTML = 'Loading...';

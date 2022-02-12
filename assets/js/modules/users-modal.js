@@ -7,7 +7,7 @@ const modalCloseButton = document.getElementById('user-modal-close');
 
 function showUserModal(userItem) {
     // Set modal data.
-    for (const [key, value] of Object.entries(applicationState.onlineUsers)) {
+    for (const value of Object.values(applicationState.onlineUsers)) {
         if (value.email === userItem.dataset.identifier) {
             const containerInner = `
                 <ul>
@@ -35,7 +35,7 @@ function showUserModal(userItem) {
     }, 100);
 }
 
-function hideUserModal(event) {
+function hideUserModal() {
     modal.style.opacity = '0';
 
     setTimeout(() => {

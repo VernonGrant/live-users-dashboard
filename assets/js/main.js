@@ -6,15 +6,15 @@ const applicationState = {
     onlineUsers: {}
 };
 
-document.addEventListener('DOMContentLoaded', (event) => {
+document.addEventListener('DOMContentLoaded', () => {
     // Initialize entrance module.
     initEntrance();
 });
 
-window.addEventListener('beforeunload', async (event) => {
-    // if (currentUser === null) {
-        // return;
-    // }
+window.addEventListener('beforeunload', async () => {
+    if (applicationState.currentUser === null) {
+        return;
+    }
 
     const response = await fetch(API_URL + 'exit', {
         method: 'POST',

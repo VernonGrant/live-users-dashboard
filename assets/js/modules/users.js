@@ -32,7 +32,7 @@ function updateUsersList() {
     }
 
     let usersListEntries = [];
-    for (const [key, value] of Object.entries(applicationState.onlineUsers)) {
+    for (const value of Object.values(applicationState.onlineUsers)) {
         usersListEntries.push(`
         <div class="user-entry" data-identifier="${value.email}">
             <div><small>Name:</small>${value.name}</div>
