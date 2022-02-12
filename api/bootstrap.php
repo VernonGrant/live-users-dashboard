@@ -5,4 +5,4 @@ $loader->addPsr4('LiveUsers\\', __DIR__ . '/core');
 
 // Global constants.
 
-define('DATA_FILE_PATH', __DIR__ . '/data/data.json');
+require __DIR__ . '/config.php';
