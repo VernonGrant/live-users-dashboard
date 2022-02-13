@@ -8,5 +8,8 @@ node_modules/
 .phpunit.cache/
 vendor/
 
+# PHPUnit
+.phpunit.result.cache
+
 # App
 config.js

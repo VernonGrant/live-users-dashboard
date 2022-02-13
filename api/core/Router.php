@@ -29,4 +29,9 @@ class Router
         http_response_code(404);
         echo '404 Not Found';
     }
+
+    public function getRegisteredRoutes()
+    {
+        return $this->registeredRoutes;
+    }
 }

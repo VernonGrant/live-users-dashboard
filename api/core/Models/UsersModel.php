@@ -41,7 +41,6 @@ class UsersModel extends Model
         $users = self::getUsersData();
         foreach ($users as $user) {
             if ($user->email == $this->email) {
-                // TODO: what if the user is already logged in?
                 $this->visitCount = $user->visitCount;
                 $this->entranceTime = $user->entranceTime;
                 $this->updatedTime = $user->updatedTime;
