@@ -13,7 +13,7 @@ $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
 $router = new Router();
 
-$router->registerRoute(['/api/enter/', '/api/enter' ], function () {
+$router->registerRoute(['/api/enter/', '/api/enter'], function () {
     if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
         goto ERROR;
     }
@@ -36,7 +36,7 @@ $router->registerRoute(['/api/enter/', '/api/enter' ], function () {
     }
 });
 
-$router->registerRoute(['/api/exit/', '/api/exit' ], function () {
+$router->registerRoute(['/api/exit/', '/api/exit'], function () {
     if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
         goto ERROR;
     }
@@ -54,7 +54,7 @@ $router->registerRoute(['/api/exit/', '/api/exit' ], function () {
     }
 });
 
-$router->registerRoute(['/api/users/', '/api/users' ], function () {
+$router->registerRoute(['/api/users/', '/api/users'], function () {
     if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
         goto ERROR;
     }
